@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeri - ULYABI</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+
+    <!-- HEADER NAVBAR -->
+     <nav class="navbar navbar-expand-lg navbar-light bg-ungu">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">ULYABI</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tentang.html">Tentang Kami</a></li>
+                    <li class="nav-item"><a class="nav-link" href="produk.html">Produk</a></li>
+                    <li class="nav-item"><a class="nav-link" href="galeri.html">Galeri</a></li>
+                    <li class="nav-item"><a class="nav-link" href="kontak.html">Kontak</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="bg-ungu text-center py-4">
+        <div class="container">
+            <h2 class="fw-bold text-white">Galeri Produk & Kegiatan</h2>
+            <p class="text-white">Dokumentasi proses, produk, dan aktivitas UMKM Ulyabi.</p>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <div class="container my-4">
+
+            <p id="info-produk" class="fw-bold text-center"></p>
+
+            <!-- GRID BOOTSTRAP (Komponen ke-4) -->
+            <div class="row g-3">
+
+                <!-- CARD BOOTSTRAP (Komponen ke-5) -->
+                <div class="col-md-3">
+                    <div class="card shadow">
+                        <img src="images/produksi.jpg" class="card-img-top produk-img" data-nama="Proses Produksi">
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card shadow">
+                        <img src="images/kmsn.jpg" class="card-img-top produk-img" data-nama="Kemasan Produk Ulyabi">
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card shadow">
+                        <img src="images/stand.jpg" class="card-img-top produk-img" data-nama="Pameran UMKM Desa Cepagan">
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card shadow">
+                        <img src="images/produk2.jpg" class="card-img-top produk-img" data-nama="Banner Ulyabi">
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card shadow">
+                        <img src="images/produk3.jpg" class="card-img-top produk-img" data-nama="Bolen">
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card shadow">
+                        <img src="images/produk.jpg" class="card-img-top produk-img" data-nama="Bolu">
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- MODAL (Komponen Bootstrap) -->
+    <div class="modal fade" id="modalGambar" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <img id="gambarModal" src="" class="img-fluid rounded">
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-ungu text-white text-center py-3 mt-4">
+        <p>&copy; 2025 ULYABI. Hak cipta dilindungi.</p>
+    </footer>
+
+    <!-- JQUERY (3 fitur lengkap) -->
+    <script>
+        $(".produk-img").click(function () {
+            const nama = $(this).data("nama");
+            const src = $(this).attr("src");
+
+            // jQuery #1 → menampilkan nama barang
+            $("#info-produk").text(nama);
+
+            // jQuery #2 → memasukkan gambar ke modal
+            $("#gambarModal").attr("src", src);
+
+            // jQuery #3 → membuka modal Bootstrap
+            $("#modalGambar").modal("show");
+        });
+    </script>
+
+</body>
+
+</html>
